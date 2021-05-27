@@ -1,0 +1,23 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+```{r}
+library(haven)
+cars <- read_sas("http://www.principlesofeconometrics.com/sas/cars.sas7bdat", 
+    NULL)
+```
+
+```{r}
+library(tidyverse)
+cars %>%
+ filter(ENG >= 68L & ENG <= 310L) %>%
+ filter(WGT >= 1613L & WGT <= 3495L) %>%
+ ggplot() +
+ aes(x = MPG, y = CYL) +
+ geom_point(size = 1L, colour = "#0c4c8a") +
+ theme_minimal()
+```
+
