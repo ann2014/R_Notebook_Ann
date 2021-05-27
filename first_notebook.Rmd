@@ -4,11 +4,16 @@ output:
   html_document:
     df_print: paged
 ---
+
+Dataset
+
 ```{r}
 library(haven)
 cars <- read_sas("http://www.principlesofeconometrics.com/sas/cars.sas7bdat", 
     NULL)
 ```
+
+Plot
 
 ```{r}
 library(tidyverse)
